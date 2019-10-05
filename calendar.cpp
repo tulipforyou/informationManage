@@ -5,7 +5,7 @@ calendar::calendar()
 	weekDay = 1;
 }
 
-void calendar::printMonthDays(int year)//´òÓ¡ÈÕÀú
+void calendar::printMonthDays(int year)//æ‰“å°æ—¥å†
 {
 	int days;
 	cout.flags(ios::left);
@@ -25,13 +25,13 @@ void calendar::printMonthDays(int year)//´òÓ¡ÈÕÀú
 
 void calendar::printTitle(int m)
 {
-	cout << "\n" << m << "ÔÂ" << endl << "ÈÕ  Ò»  ¶ş  Èı  ËÄ  Îå  Áù\n";
+	cout << "\n" << m << "æœˆ" << endl << "æ—¥  ä¸€  äºŒ  ä¸‰  å››  äº”  å…­\n";
 	//cout << " ";
 	for (int i = 0; i < weekDay*2; i++)
 		cout << "  ";
 }
 
-int calendar::monthDays(int year,int n)//ÅĞ¶ÏÃ¿ÔÂÌìÊı
+int calendar::monthDays(int year,int n)//åˆ¤æ–­æ¯æœˆå¤©æ•°
 {
 	switch(n)
 	{
@@ -63,10 +63,10 @@ int calendar::firstDay(int year)
 	int i1=365;
 	int num=0;
 	int days;
-	for (int i = 1; i < year; i++)
+	for (int i = 1; i < year; i++)//ä¸èƒ½ç­‰äºï¼Œå› ä¸ºé—°å¹´å½“å¹´ä¸å‚ä¸è®¡ç®—
 		if (((i % 4 == 0 && i % 100 != 0) || i % 400 == 0))
 			num++;
-	days = i1 * (year - 1)+num;
+	days = i1 * (year - 1)+num;//é—°å¹´ä¸å‚ä¸è®¡ç®—
 	weekDay = (days % 7)+1;
 	return weekDay;
 }
