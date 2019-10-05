@@ -14,6 +14,7 @@ public:
 	void printTitle(int m);
 	int monthDays(int n);
 	int firstDay(int year);
+
 };
 
 #endif
