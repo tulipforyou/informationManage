@@ -8,11 +8,10 @@ class calendar
 {
 public:
 	int weekDay;
-	int year;
 	calendar();
-	void printMonthDays();
+	void printMonthDays(int year);
 	void printTitle(int m);
-	int monthDays(int n);
+	int monthDays(int year,int n);
 	int firstDay(int year);
 
 };
