@@ -87,6 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,10 +126,12 @@
   <ItemGroup>
     <ClCompile Include="calendar.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="stuManage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="calendar.h" />
     <ClInclude Include="include.h" />
+    <ClInclude Include="stuManage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

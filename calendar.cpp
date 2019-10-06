@@ -5,14 +5,14 @@ calendar::calendar()
 	weekDay = 1;
 }
 
-void calendar::printMonthDays(int year)//æ‰“å°æ—¥å†
+void calendar::printMonthDays(int year)//´òÓ¡ÈÕÀú
 {
 	int days;
 	cout.flags(ios::left);
 	for (int i = 1; i <= 12; i++)
 	{
 		printTitle(i);
-		days = monthDays(year,i);
+		days = monthDays(year, i);
 		for (int i = 1; i <= days; i++)
 		{
 			cout << setw(4) << i;
@@ -25,48 +25,49 @@ void calendar::printMonthDays(int year)//æ‰“å°æ—¥å†
 
 void calendar::printTitle(int m)
 {
-	cout << "\n" << m << "æœˆ" << endl << "æ—¥  ä¸€  äºŒ  ä¸‰  å››  äº”  å…­\n";
+	cout << m << "ÔÂ" << endl;
+	cout << "ÈÕ  Ò»  ¶ş  Èı  ËÄ  Îå  Áù" << endl;
 	//cout << " ";
-	for (int i = 0; i < weekDay*2; i++)
+	for (int i = 0; i < weekDay * 2; i++)
 		cout << "  ";
 }
 
-int calendar::monthDays(int year,int n)//åˆ¤æ–­æ¯æœˆå¤©æ•°
+int calendar::monthDays(int year, int n)//ÅĞ¶ÏÃ¿ÔÂÌìÊı
 {
-	switch(n)
+	switch (n)
 	{
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			return 31;
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			return 30;
-		case 2:
-			if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
-				return 29;
-			else
-				return 28;
-		default:
-			return 0;
-	}	
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		return 31;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		return 30;
+	case 2:
+		if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
+			return 29;
+		else
+			return 28;
+	default:
+		return 0;
+	}
 }
 
 int calendar::firstDay(int year)
 {
-	int i1=365;
-	int num=0;
+	int i1 = 365;
+	int num = 0;
 	int days;
-	for (int i = 1; i < year; i++)//ä¸èƒ½ç­‰äºï¼Œå› ä¸ºé—°å¹´å½“å¹´ä¸å‚ä¸è®¡ç®—
+	for (int i = 1; i < year; i++)//²»ÄÜµÈÓÚ£¬ÒòÎªÈòÄêµ±Äê²»²ÎÓë¼ÆËã
 		if (((i % 4 == 0 && i % 100 != 0) || i % 400 == 0))
 			num++;
-	days = i1 * (year - 1)+num;//é—°å¹´ä¸å‚ä¸è®¡ç®—
-	weekDay = (days % 7)+1;
+	days = i1 * (year - 1) + num;//ÈòÄê²»²ÎÓë¼ÆËã
+	weekDay = (days % 7) + 1;
 	return weekDay;
 }
